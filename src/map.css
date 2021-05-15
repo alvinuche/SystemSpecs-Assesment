@@ -1,0 +1,95 @@
+h1,
+h2,
+h3:not(.title) {
+	margin-bottom: 1rem;
+	color: rgb(0, 118, 228);
+}
+
+.nav_container {
+	padding: 1.5rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #555;
+	color: #fff;
+}
+.user_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.span {
+	color: rgb(0, 118, 228);
+}
+
+.img_container {
+	padding: 0 0.5rem;
+}
+.main_container {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 2rem;
+	padding: 2rem;
+	color: #555;
+}
+
+.aside_wrapper {
+	grid-column: span 12;
+}
+.main_content_wrapper {
+	grid-column: span 12;
+}
+
+.aside_content {
+	padding: 1rem 0.5rem;
+}
+.user_details {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid #555;
+}
+.user_details span {
+	margin-right: 1rem;
+}
+
+.map {
+	height: 50vh;
+	width: 100%;
+}
+
+.circle {
+	background: #d83b01;
+	border-radius: 50%;
+	color: #fff;
+	height: 2.5em;
+	position: relative;
+	width: 2.5em;
+
+	border: 1px solid transparent;
+}
+
+.circleText {
+	text-align: center;
+	height: 50%;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+}
+
+.user_places {
+	margin-bottom: 1.5rem;
+	padding-left: 1rem;
+	border-left: 3px solid rgb(136, 189, 238);
+}
+
+@media screen and (min-width: 48em) {
+	.aside_wrapper {
+		grid-column: span 3;
+	}
+	.main_content_wrapper {
+		grid-column: span 9;
+	}
+}
