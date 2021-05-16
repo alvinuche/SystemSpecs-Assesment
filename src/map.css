@@ -62,10 +62,9 @@ h3:not(.title) {
 	background: #d83b01;
 	border-radius: 50%;
 	color: #fff;
-	height: 2.5em;
+	height: 2.5rem;
 	position: relative;
-	width: 2.5em;
-
+	width: 2.5rem;
 	border: 1px solid transparent;
 }
 
