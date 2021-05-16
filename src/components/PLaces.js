@@ -8,36 +8,29 @@ const Places = () => {
 	const userData = useSelector((state) => state.user.user.user);
 	const points = getCoodinate();
 
-	const [userGeoLocation, setUserGeoLocation] = useState({
-		longitude: "",
-		latitude: "",
-	});
 	const [closestDistance, setClosestDistance] = useState([]);
 
-	function getLocation() {
+	function getLocations() {
 		const getGeoLocation = localStorage.getItem("location")
 			? JSON.parse(localStorage.getItem("location"))
 			: { latitude: 6.526776, longitude: 3.3849411 };
-		setUserGeoLocation({
-			longitude: getGeoLocation.longitude,
-			latitude: getGeoLocation.latitude,
-		});
 
 		const opts = {
 			yName: "latitude",
 			xName: "longitude",
 		};
-		let distances = sortByDistance(userGeoLocation, points, opts);
+
+		// let currentGeoLocation = userGeoLocation.latitude
+		let distances = sortByDistance(getGeoLocation, points, opts);
 		return setClosestDistance(distances);
 	}
 
 	useEffect(() => {
-		getLocation();
+		getLocations();
 	}, []);
 
 	return (
 		<div>
-			{/* {points && console.log(points)} */}
 			<br />
 			<div>
 				<h1>Welcome {userData.user.lastName}!</h1>
@@ -54,7 +47,6 @@ const Places = () => {
 					closestDistance.map(({ title, distance }) => (
 						<p key={distance} className="user_places">
 							{title}
-							{/* {console.log(title + ": " + distance)} */}
 						</p>
 					))}
 			</div>
